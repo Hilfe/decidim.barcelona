@@ -53,8 +53,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :meetings, only: [:index, :show]
-
   resources :spending_proposals, only: [:index, :new, :create]
 
   resource :email_notifications_reminder, only: [:create, :destroy]
@@ -309,6 +307,8 @@ Rails.application.routes.draw do
         put :unflag
       end
     end
+
+    resources :meetings, only: [:index, :show]
   end
 
   if Rails.env.development?
