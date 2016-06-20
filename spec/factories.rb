@@ -118,6 +118,7 @@ FactoryGirl.define do
   end
 
   factory :debate do
+    participatory_process
     sequence(:title)     { |n| "Debate #{n} title" }
     description          'Debate description'
     instructions         'Debate instructions'
@@ -162,6 +163,7 @@ FactoryGirl.define do
   end
 
   factory :proposal do
+    participatory_process
     sequence(:title)     { |n| "Proposal #{n} title" }
     summary              'In summary, what we want is...'
     description          'Proposal description'
@@ -322,6 +324,7 @@ FactoryGirl.define do
   end
 
   factory :category do
+    participatory_process
     sequence(:name) do |n|
       I18n.available_locales.inject({}) do |result, locale|
         result[locale.to_s] = "Axis #{n}"
@@ -338,6 +341,8 @@ FactoryGirl.define do
   end
 
   factory :subcategory do
+    participatory_process
+
     sequence(:name) do |n|
       I18n.available_locales.inject({}) do |result, locale|
         result[locale.to_s] = "Action Line #{n}"
@@ -363,6 +368,7 @@ FactoryGirl.define do
   places = YAML.load_file("#{Rails.root}/db/seeds/places.yml")[:places]
 
   factory :meeting do
+    participatory_process
     sequence(:title)       { |n| "Meeting #{n} title" }
     sequence(:description) { |n| "Meeting #{n} description" }
     held_at Date.today
@@ -434,5 +440,9 @@ FactoryGirl.define do
     participants_count 1
     meeting_interventions_count 1
     interventions_count 1
+  end
+
+  factory :participatory_process do
+    sequence(:name) { |n| "PAM #{n}" }
   end
 end
