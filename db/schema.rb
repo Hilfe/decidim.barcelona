@@ -13,20 +13,34 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160620074831) do
 =======
 ActiveRecord::Schema.define(version: 20160615065641) do
 >>>>>>> Update schema
 =======
+=======
+>>>>>>> Use participatory process for categories/subcategories
 ActiveRecord::Schema.define(version: 20160615065641) do
 =======
+=======
+>>>>>>> Use participatory process for categories/subcategories
 <<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160620074831) do
 =======
 ActiveRecord::Schema.define(version: 20160616090940) do
 >>>>>>> 8584ec8... Add default participatory process and references fields
+<<<<<<< HEAD
 >>>>>>> Add default participatory process and references fields
+<<<<<<< HEAD
 >>>>>>> Add default participatory process and references fields
+=======
+=======
+=======
+ActiveRecord::Schema.define(version: 20160620074831) do
+>>>>>>> 668c9b6... Use participatory process for categories/subcategories
+>>>>>>> Use participatory process for categories/subcategories
+>>>>>>> Use participatory process for categories/subcategories
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -329,15 +343,23 @@ ActiveRecord::Schema.define(version: 20160616090940) do
     t.integer  "interventions"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     t.integer  "proposals_count",          default: 0,          null: false
     t.integer  "participatory_process_id"
 =======
 >>>>>>> Update schema
 =======
 =======
+>>>>>>> Use participatory process for categories/subcategories
+=======
+=======
+>>>>>>> Use participatory process for categories/subcategories
 <<<<<<< HEAD
     t.integer  "proposals_count",   default: 0,          null: false
 =======
+=======
+    t.integer  "proposals_count",          default: 0,          null: false
+>>>>>>> 668c9b6... Use participatory process for categories/subcategories
     t.integer  "participatory_process_id"
 >>>>>>> 8584ec8... Add default participatory process and references fields
 >>>>>>> Add default participatory process and references fields
