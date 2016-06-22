@@ -11,50 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160620074831) do
-=======
-ActiveRecord::Schema.define(version: 20160615065641) do
->>>>>>> Update schema
-=======
-=======
->>>>>>> Use participatory process for categories/subcategories
-=======
->>>>>>> Use participatory process for action plans
-ActiveRecord::Schema.define(version: 20160615065641) do
-=======
-=======
->>>>>>> Use participatory process for categories/subcategories
-=======
->>>>>>> Use participatory process for action plans
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160620074831) do
-=======
-ActiveRecord::Schema.define(version: 20160616090940) do
->>>>>>> 8584ec8... Add default participatory process and references fields
-<<<<<<< HEAD
->>>>>>> Add default participatory process and references fields
-<<<<<<< HEAD
->>>>>>> Add default participatory process and references fields
-=======
-=======
-=======
-ActiveRecord::Schema.define(version: 20160620074831) do
->>>>>>> 668c9b6... Use participatory process for categories/subcategories
-<<<<<<< HEAD
->>>>>>> Use participatory process for categories/subcategories
-<<<<<<< HEAD
->>>>>>> Use participatory process for categories/subcategories
-=======
-=======
-=======
 ActiveRecord::Schema.define(version: 20160621110813) do
->>>>>>> cfd13c1... Use participatory process for action plans
->>>>>>> Use participatory process for action plans
->>>>>>> Use participatory process for action plans
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -358,29 +315,8 @@ ActiveRecord::Schema.define(version: 20160621110813) do
     t.integer  "attendee_count"
     t.text     "organizations"
     t.integer  "interventions"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     t.integer  "proposals_count",          default: 0,          null: false
     t.integer  "participatory_process_id"
-=======
->>>>>>> Update schema
-=======
-=======
->>>>>>> Use participatory process for categories/subcategories
-=======
-=======
->>>>>>> Use participatory process for categories/subcategories
-<<<<<<< HEAD
-    t.integer  "proposals_count",   default: 0,          null: false
-=======
-=======
-    t.integer  "proposals_count",          default: 0,          null: false
->>>>>>> 668c9b6... Use participatory process for categories/subcategories
-    t.integer  "participatory_process_id"
->>>>>>> 8584ec8... Add default participatory process and references fields
->>>>>>> Add default participatory process and references fields
->>>>>>> Add default participatory process and references fields
   end
 
   add_index "meetings", ["participatory_process_id"], name: "index_meetings_on_participatory_process_id", using: :btree
@@ -415,6 +351,13 @@ ActiveRecord::Schema.define(version: 20160621110813) do
   end
 
   add_index "organizations", ["user_id"], name: "index_organizations_on_user_id", using: :btree
+
+  create_table "participatory_processes", force: :cascade do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "proposal_answers", force: :cascade do |t|
     t.integer  "proposal_id",                 null: false
